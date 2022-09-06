@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Busqueda</title>
+</head>
+<body>
+
+    <p>Estas Buscando: <strong>{{ query }}</strong></p>
+
+    {% if articulos|length > 1 %}
+
+        <p>Articulos encontrados: {{articulos|length}} articulos</p>
+
+        <ul>
+            {% for articulo in articulos %}
+
+                <li>{{articulo.nombre}}</li>
+                <li>{{articulo.seccion}}</li>
+                <li>{{articulo.precio}}</li>
+
+                <br>
+
+            {% endfor %}
+        </ul>
+
+    {% elif articulos %}
+
+    <p>Articulos encontrados: {{articulos|length}} articulo</p>
+
+        <ul>
+            {% for articulo in articulos %}
+
+                <li>{{articulo.nombre}}</li>
+                <li>{{articulo.seccion}}</li>
+                <li>{{articulo.precio}}</li>
+
+            {% endfor %}
+        </ul>
+        
+    {% else %}
+
+        <p>No existen articulos con ese nombre</p>
+
+    {% endif %}
+
+
+    
+</body>
+</html>
