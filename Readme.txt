@@ -1,0 +1,1 @@
+Abrir en python-3.10.6-amd64.exe windows
